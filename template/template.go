@@ -232,8 +232,9 @@ PreDown = {{ .Server.PreDown }}
 PostDown = {{ .Server.PostDown }}
 {{- range .Clients }}
 {{ if .Enable -}}
-# {{.Name}} / {{.Email}} / Updated: {{.Updated}} / Created: {{.Created}}
 [Peer]
+# {{.Email}} / Updated: {{.Updated}} / Created: {{.Created}}
+# {{.Name}}
 PublicKey = {{ .PublicKey }}
 PresharedKey = {{ .PresharedKey }}
 AllowedIPs = {{ StringsJoin .Address ", " }}
